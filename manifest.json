@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Universal Dark Mode Pro",
+  "version": "2.0",
+  "description": "Smart dark mode for any website with per-site memory.",
+  "permissions": ["activeTab", "scripting", "storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
